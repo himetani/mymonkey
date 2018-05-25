@@ -18,8 +18,8 @@ type Statement interface {
 }
 
 type Expression interface {
+	Node
 	expressionNode()
-	String() string
 }
 
 type Program struct {
