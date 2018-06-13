@@ -98,6 +98,15 @@ var builtins = map[string]*object.Builtin{
 			return NULL
 		},
 	},
+	"puts": &object.Builtin{
+		Fn: func(args ...object.Object) object.Object {
+			for _, arg := range args {
+				fmt.Println(arg.Inspect())
+			}
+
+			return NULL
+		},
+	},
 }
 
 func isError(obj object.Object) bool {
